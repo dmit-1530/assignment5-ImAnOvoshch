@@ -1,68 +1,62 @@
-/* Colour Palette
-    off-black : #002438;
-    navy      : #003049;
-    orange    : #F77F00;
-    yellow    : #FCBF49;
-*/
+
+/* Utility */
 
 body {
     background: linear-gradient(90deg, #46A098 0%, #54A654 100%);
+    font-family: "PT Sans", sans-serif;
 }
-
-/* Helper Classes */
 
 .flex-container {
     display: flex;
     justify-content: space-between;
 }
 
-/* *************** header & nav ****************** */
-/* Step: 1 Style the default/showing state. Starting with the mobile view, style the layout and links for how they will look when visible */
+.inner-container {
+    margin: 0 auto;
+    max-width: 1820px;
+    padding: 0 1rem;
+}
+
+/* Header */
 
 header {
-    background-color: #003049;
+    background-color: #9846A0;
     color: #ffffff;
+}
+
+header div.inner-container {
+    align-items: center;
     padding: 1rem;
 }
 
-header a {
+.menu li a {
     color: #FCBF49;
     text-decoration: none;
-    /* allows the clickable area to take up the full width and height of the li */
     display: block;
 }
 
-h1 a:hover {
-    color: #F77F00;
+.menu li a:hover,
+.menu li a:active {
+    background-color: #A258A9;
 }
 
-.menu a:hover,
-.menu a:active {
-    background-color: #002438;
+.logo {
+    width: 8.3125rem;
+    height: auto;
 }
 
 .toggle-btn {
-    background: #003049;
+    width: 2.375rem;
+    height: 2.9375rem;
+    background: none;
     border: none;
-    outline: none;
-}
-
-.toggle-btn:hover {
+    padding: 0;
     cursor: pointer;
 }
 
-.toggle-btn svg rect {
-    fill: #FCBF49;
-}
-
-.toggle-btn:hover svg rect {
-    fill: #F77F00;
-}
-
-.menu li {
-    /* the extra space from the additional line height, makes this a larger area and vertically centers the text */
-    line-height: 2.5rem;
-    text-align: center;
+.shopping-bag {
+    width: 1.5rem;
+    height: auto;
 }
 
 header nav {
@@ -70,7 +64,7 @@ header nav {
     top: 4.125rem;
     left: 0;
     width: 100vw;
-    background-color: #003049;
+    background-color: #9846A0;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.7s ease-in-out;
@@ -80,40 +74,9 @@ header nav {
     max-height: 100vh;
 }
 
-section {
-    padding: 3.125rem;
-    text-align: center;
-    text-transform: uppercase;
-}
+/* Media Queries */
 
-section p {
-    color: #002438;
-    border-bottom: 2px solid #F77F00;
-    padding-bottom: .625rem;
-    margin-bottom: .625rem;
-    font-size: 1.777rem;
-}
-
-section h2 {
-    color: #002438;
-    font-size: 3.157rem;
-    margin-bottom: 2rem;
-}
-
-.gallery {
-    display: flex;
-    flex-flow: wrap;
-    justify-content: center;
-}
-
-.thumbnail {
-    margin: 0 0.5rem;
-    position: relative;
-}
-
-/* Media Query */
-
-@media (min-width: 37.5rem) {
+@media screen and (min-width: 37.5rem) {
     .inner-container {
         max-width: 64rem;
         margin: 0 auto;
