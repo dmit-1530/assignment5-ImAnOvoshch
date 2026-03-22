@@ -13,8 +13,12 @@ body {
 
 .inner-container {
     margin: 0 auto;
-    max-width: 1820px;
+    max-width: 113.75rem;
     padding: 0 1rem;
+}
+
+main section.inner-container {
+    padding-top: 0;
 }
 
 /* Typography */
@@ -88,19 +92,35 @@ header div.inner-container {
 /* Navigation */
 
 .menu li a {
-    color: #FCBF49;
+    color: #FFF;
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 3.5rem;
+    text-transform: uppercase;
     text-decoration: none;
+    text-decoration: none;
+    text-align: center;
     display: block;
 }
 
+.menu li {
+    border-bottom: 1px solid #CECBCB;
+}
+
+.menu li:first-of-type {
+    border-top: 1px solid #CECBCB;
+}
+
 .menu li a:hover,
+.menu li a:focus,
 .menu li a:active {
     background-color: #A258A9;
 }
 
 header nav {
     position: absolute;
-    top: 4.125rem;
+    top: 4.9375rem;
     left: 0;
     width: 100vw;
     background-color: #9846A0;
@@ -109,13 +129,18 @@ header nav {
     transition: max-height 0.7s ease-in-out;
 }
 
+/* Has to have higher specificity to override reset.css */
+header div nav ul.menu {
+    padding: 0 1rem 2.5rem 1rem;
+}
+
 .show-nav {
     max-height: 100vh;
 }
 
 /* Media Queries */
 
-@media screen and (min-width: 37.5rem) {
+@media screen and (min-width: 48.75rem) {
     .inner-container {
         max-width: 64rem;
         margin: 0 auto;
@@ -128,8 +153,6 @@ header nav {
 
     header nav {
         position: static;
-        /* Return nav to html from position absolute */
-        width: auto;
         max-height: unset;
         overflow: visible;
     }
@@ -139,12 +162,32 @@ header nav {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        gap: 1.5rem;
+        flex-wrap: wrap;
     }
 
-    .menu a:hover,
-    .menu a:active {
-        background-color: unset;
-        color: #F77F00;
+    .menu li a {
+        padding: 0 .5rem;
+        border-radius: .3125rem;
+    }
+
+    header div nav ul.menu {
+        padding: .5rem 0;
+    }
+
+    .menu li,
+    .menu li:first-of-type {
+    border: none;
+    }
+
+    header div.inner-container {
+        padding-bottom: 0;
+    }
+
+    header {
+        margin-bottom: 2.25rem;
+    }
+
+    main section.inner-container div {
+        max-width: 30.5rem;
     }
 }
