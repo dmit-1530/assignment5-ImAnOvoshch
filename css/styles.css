@@ -136,7 +136,7 @@ header div nav ul.menu {
 .menu li a:hover,
 .menu li a:focus,
 .menu li a:active {
-    
+
     /* Not sure which colour exacly the hover should be as the hover state colours in the figma file are different */
     background-color: #A258A9;
 }
@@ -229,5 +229,17 @@ main a:active {
 
     header {
         margin-bottom: 2.5rem;
+    }
+}
+
+@media screen and (min-width: 120rem) {
+    header div.inner-container {
+        max-width: 113.75rem;
+        padding: 1rem 0;
+    }
+
+    main section.inner-container {
+        max-width: 113.75rem;
+        padding: 0;
     }
 }
