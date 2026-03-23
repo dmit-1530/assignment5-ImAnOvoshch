@@ -13,7 +13,6 @@ body {
 
 .inner-container {
     margin: 0 auto;
-    max-width: 113.75rem;
     padding: 0 1rem;
 }
 
@@ -112,12 +111,6 @@ header div.inner-container {
     border-top: 1px solid #CECBCB;
 }
 
-.menu li a:hover,
-.menu li a:focus,
-.menu li a:active {
-    background-color: #A258A9;
-}
-
 header nav {
     position: absolute;
     top: 4.9375rem;
@@ -138,14 +131,25 @@ header div nav ul.menu {
     max-height: 100vh;
 }
 
+/* Hovers, focuses, actives */
+
+.menu li a:hover,
+.menu li a:focus,
+.menu li a:active {
+    
+    /* Not sure which colour exacly the hover should be as the hover state colours in the figma file are different */
+    background-color: #A258A9;
+}
+
+main a:hover,
+main a:focus,
+main a:active {
+    background-color: #793880;
+}
+
 /* Media Queries */
 
 @media screen and (min-width: 48.75rem) {
-    .inner-container {
-        max-width: 64rem;
-        margin: 0 auto;
-        padding: 1rem;
-    }
 
     .toggle-btn {
         display: none;
@@ -189,5 +193,41 @@ header div nav ul.menu {
 
     main section.inner-container div {
         max-width: 30.5rem;
+    }
+}
+
+@media screen and (min-width: 64.8125rem) {
+    header div.inner-container > a:first-of-type {
+        order: 1;
+    }
+
+    header div.inner-container > a:nth-of-type(2) {
+        order: 3;
+    }
+
+    header div.inner-container nav {
+        order: 2;
+        width: 70%;
+    }
+
+    header nav {
+        width: auto;
+    }
+
+    header div nav ul {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    header div nav ul.menu {
+        padding: 0;
+    }
+
+    header div.inner-container {
+        padding-bottom: 1rem;
+    }
+
+    header {
+        margin-bottom: 2.5rem;
     }
 }
